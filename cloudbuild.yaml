@@ -1,5 +1,5 @@
 steps:
-- name: 'Install Dependencies'
+- name: 'Install'
   args: ['make','install']
 
 - name: 'Lint'
