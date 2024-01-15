@@ -1,0 +1,12 @@
+steps:
+- name: 'Install Dependencies'
+  args: ['make','install']
+
+- name: 'Lint'
+  args: ['make','lint']
+
+- name: 'Test'
+  args: ['make','test']
+
+- name: 'Format'
+  args: ['make','format']
