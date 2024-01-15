@@ -1,4 +1,4 @@
-name: Hello CI
+name: local 3.11
 
 on:
   push:
