@@ -1,4 +1,4 @@
-name: local 3.9
+name: GCP 3.9
 
 on:
   push:
