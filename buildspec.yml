@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - make install
+
+  pre_build:
+    commands:
+      - make lint
+
+  build:
+    commands:
+      - make test
+
+  post_build:
+    commands:
+      - make format
