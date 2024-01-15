@@ -1,12 +1,23 @@
 steps:
-- name: 'Install'
-  args: ['make','install']
+  # Step to pull a base Docker image with Python
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['pull', 'python:3.9-slim']
 
-- name: 'Lint'
-  args: ['make','lint']
-
-- name: 'Test'
-  args: ['make','test']
-
-- name: 'Format'
-  args: ['make','format']
+  # Step to build and run commands using Makefile
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'run'
+      - '--rm'
+      - '-v'
+      - '$$PWD:$$PWD'
+      - '-w'
+      - '$$PWD'
+      - 'python:3.9-slim'
+      - 'sh'
+      - '-c'
+      - |
+        apt-get update && apt-get install -y make
+        make install
+        make lint
+        make test
+        make format
