@@ -3,4 +3,4 @@
  The book's exercises and my notes
 
 ## Chapter 1
-- Creating CI integration with Github Actions, AWS CodeBuild and GCP CloudBuild
+- Creating CI integration with Github Actions
